@@ -104,6 +104,7 @@ def plot_3d_motion(motion, length, save_path, params, title="", interval=50, pal
     # # invert axis
     motion[:, 1, :] = -motion[:, 1, :]
     motion[:, 2, :] = -motion[:, 2, :]
+    print(f'motion: {motion.shape}')
     # this hack is not needed for amass
 
     """
@@ -121,6 +122,7 @@ def plot_3d_motion(motion, length, save_path, params, title="", interval=50, pal
         kinematic_tree = smpl_kinematic_chain
     else:
         kinematic_tree = None
+    # print(f'kinematic_tree: {kinematic_tree}')
 
     def update(index):
         ax.lines = []
